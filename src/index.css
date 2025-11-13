@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Global styles for the portfolio. The `scroll-smooth` class is
+ * applied to the body to enable smooth scrolling behavior when
+ * navigating to anchors. Additional global styles can be added here.
+ */
+body {
+  @apply scroll-smooth;
+}
