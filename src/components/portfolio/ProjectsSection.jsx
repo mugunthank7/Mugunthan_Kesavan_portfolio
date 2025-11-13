@@ -72,7 +72,7 @@ const projects = {
       ],
       tags: ["PyTorch", "Computer Vision", "Style Transfer", "Video Processing"],
       github: "https://github.com/mugunthank7/Enhanced-Segmented-Neural-Style-Transfer-for-Real-Time-Video-Stylization",
-      image: "https://raw.githubusercontent.com/mugunthank7/Enhanced-Segmented-Neural-Style-Transfer-for-Real-Time-Video-Stylization/main/results/video.gif"
+      image: "https://github.com/mugunthank7/Enhanced-Segmented-Neural-Style-Transfer-for-Real-Time-Video-Stylization/blob/main/results/foreground-gif.gif?raw=true"
     }
   ]
 };
