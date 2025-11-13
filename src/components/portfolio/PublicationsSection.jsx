@@ -11,7 +11,7 @@ const publications = [
     venue: "Proceedings of ICRTC 2024, Springer LNNS 885",
     year: "2025",
     status: "Published",
-    link: "https://link.springer.com",
+    link: "https://link.springer.com/chapter/10.1007/978-981-97-8836-1_5",
     image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6914b2c1758116cf1a4ccd06/bd2aead19_CertificateOfCompletion_MicrosoftAzureAIEssentialsProfessionalCertificatebyMicrosoftandLinkedIn.pdf",
     tags: ["NLP", "Social Media", "Telugu", "Cost-Sensitive Learning"]
   },
