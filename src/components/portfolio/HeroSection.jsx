@@ -126,7 +126,7 @@ export default function HeroSection({ scrollToEducation }) {
                 <Github className="w-5 h-5" />
               </a>
               <a 
-                href="https://instagram.com/mugunthan" 
+                href="https://instagram.com/__mugunthan__" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 text-white rounded-lg hover:opacity-90 transition-all hover:scale-110"

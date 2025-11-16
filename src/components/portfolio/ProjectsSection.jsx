@@ -14,18 +14,18 @@ const projects = {
         "Executed large-scale data ingestion, transformation, and feature extraction workflows for ML readiness",
         "Applied Spark MLlib for classification and clustering, achieving a 40% reduction in computation time compared to serial processing"
       ],
-      tags: ["Hadoop", "Spark", "MapReduce", "Big Data", "MLlib"],
-      github: "#"
+      tags: ["Hadoop", "Spark", "MapReduce", "Big Data", "MLlib", "Data Engineering", "PowerBI"],
+      github: "https://github.com/mugunthank7/Insightful-Sales-Dashboard-PowerBI"
     },
     {
-      title: "Machine Learning for Protein Analysis",
+      title: "Identifying Pore-Forming Proteins with Machine Learning",
       description: "Processed 30K+ protein records using ProtBERT/ESM2 embeddings and clustering for structural pattern discovery",
       points: [
         "Benchmarked Random Forest, XGBoost, SVM, achieving 10% higher accuracy vs. baselines",
         "Documented model comparisons and feature importance analysis"
       ],
       tags: ["ProtBERT", "ESM2", "XGBoost", "SVM", "Clustering"],
-      github: "#"
+      github: "https://github.com/mugunthank7/Pore-forming-proteins"
     },
     {
       title: "Protein Methyl Transfer Identification",
@@ -47,18 +47,18 @@ const projects = {
         "Implemented cost-sensitive learning to handle class imbalance"
       ],
       tags: ["IndicBERT", "LABSE", "MURIL", "NLP", "Social Media"],
-      github: "#",
-      paper: "https://link.springer.com"
+      github: "https://link.springer.com/chapter/10.1007/978-981-97-8836-1_5",
+      paper: "https://link.springer.com/chapter/10.1007/978-981-97-8836-1_5"
     },
     {
-      title: "Tamil Sentiment Analysis with Transformers",
-      description: "Created Tamil sentiment corpus via scraping, cleaning, and manual annotation",
+      title: "Speech to Speech Translation for Tamil Sentiment Analysis",
+      description: "Created Tamil sentiment corpus via scraping, cleaning, and manual annotation , built speech to speech translation pipeline using pre-trained models",
       points: [
-        "Benchmarked multilingual embeddings + ML models for cross-lingual sentiment classification",
-        "Evaluated zero-shot and supervised learning approaches"
+        "Developed a pipeline for speech-to-speech translation leveraging text-to-speech and speech-to-text models",
+        "Facilitated multilingual communication by translating Tamil speech inputs to Telugu speech outputs"
       ],
-      tags: ["Transformers", "Sentiment Analysis", "Tamil", "Zero-Shot"],
-      github: "#"
+      tags: ["Transformers", "text-to-speech", "Tamil", "translation"],
+      github: "https://github.com/mugunthank7/Tamil-to-Telugu-Speech-to-Speech-Translation-for-Multilingual-Communication"
     }
   ],
   cv: [
