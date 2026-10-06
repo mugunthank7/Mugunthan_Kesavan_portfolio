@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mugunthan Kesavan — AI/ML Engineer</title>
     <meta name="description"
-        content="AI/ML Engineer building LLM pipelines, RAG systems, and digital twins. MS Data Science & AI at University of Houston. Published researcher with expertise in NLP, computer vision, and full-stack ML systems.">
+        content="AI/ML Engineer building production LLM systems, RAG assistants, and digital twins. MS Engineering Data Science & AI at University of Houston. Two peer-reviewed publications.">
     <meta name="keywords"
-        content="Mugunthan Kesavan, AI Engineer, ML Engineer, LLM, NLP, RAG, Deep Learning, University of Houston, Python, PyTorch">
+        content="Mugunthan Kesavan, AI Engineer, ML Engineer, LLM, RAG, Generative AI, Digital Twin, NLP, University of Houston, Python, PyTorch">
     <meta name="author" content="Mugunthan Kesavan">
 
     <!-- Open Graph -->
@@ -44,6 +44,7 @@
             <a href="#" class="nav-logo">MK</a>
             <div class="nav-links">
                 <a href="#about" class="nav-item">About</a>
+                <a href="#experience" class="nav-item">Experience</a>
                 <a href="#projects" class="nav-item">Projects</a>
                 <a href="#publications" class="nav-item">Publications</a>
                 <a href="#contact" class="nav-item">Contact</a>
@@ -58,6 +59,7 @@
     <div class="mobile-menu-overlay">
         <div class="mobile-nav-links">
             <a href="#about" class="mobile-nav-item">About</a>
+            <a href="#experience" class="mobile-nav-item">Experience</a>
             <a href="#projects" class="mobile-nav-item">Projects</a>
             <a href="#publications" class="mobile-nav-item">Publications</a>
             <a href="#contact" class="mobile-nav-item">Contact</a>
@@ -75,7 +77,7 @@
                     </h1>
                     <p class="hero-tagline animate-in">I build AI systems that replace<br>manual work with intelligent
                         automation.</p>
-                    <p class="hero-subtitle animate-in">AI/ML Engineer · Houston, TX</p>
+                    <p class="hero-subtitle animate-in">AI/ML Engineer · LLM Systems &amp; Generative AI · Houston, TX</p>
                     <a href="./assets/resume.pdf" target="_blank" class="btn-minimal animate-in">
                         DOWNLOAD RESUME <span class="arrow">↓</span>
                     </a>
@@ -98,11 +100,12 @@
                 <div class="about-grid">
                     <div class="about-text">
                         <p>I'm an AI/ML engineer who builds systems that ship — not just models that demo. Right now I'm
-                            building multi-agent LLM pipelines for manufacturing automation and digital twins for
-                            reverse supply chains. I've published 2 peer-reviewed papers, cut manual processes by
-                            85-90%, and I believe the best AI is the kind you never notice because it just works.</p>
-                        <p>M.S. Data Science & AI at the University of Houston. B.Tech AI Engineering from Amrita Vishwa
-                            Vidyapeetham.</p>
+                            delivering an order-validation pipeline and a client-facing RAG assistant for a
+                            manufacturing client, running on-prem in production. Before that, I built a digital twin of
+                            HPE's reverse supply chain. I've published 2 peer-reviewed papers, and I believe the best AI
+                            is the kind you never notice because it just works.</p>
+                        <p>M.S. Engineering Data Science &amp; AI at the University of Houston. B.Tech AI Engineering from
+                            Amrita Vishwa Vidyapeetham.</p>
                     </div>
 
                     <div class="about-stats">
@@ -112,7 +115,11 @@
                         </div>
                         <div class="stat-item">
                             <span class="stat-value">97%</span>
-                            <span class="stat-label">Classification<br>Accuracy</span>
+                            <span class="stat-label">Error-Detection<br>Accuracy</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">3,500+</span>
+                            <span class="stat-label">Pages Indexed in<br>Client RAG Assistant</span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-value">90%</span>
@@ -141,29 +148,34 @@
                             </div>
                         </div>
                         <div class="exp-content">
-                            <h3 class="exp-role">Technical Research Assistant</h3>
-                            <h4 class="exp-team">AI Systems & Automation</h4>
+                            <h3 class="exp-role">AI Engineer &amp; Technical Research Assistant</h3>
+                            <h4 class="exp-team">AI Systems &amp; Automation</h4>
                             <p class="exp-company">TMAC × University of Houston</p>
                             <ul class="exp-bullets">
-                                <li>Building a multi-agent LLM pipeline for a national manufacturing client that
-                                    validates ~800 sales emails/month against ERP records</li>
-                                <li>Architected a two-layer system: deterministic Python scripts for numeric field
-                                    matching + LLMs (Phi-3, Qwen, Mistral) for contextual free-text validation</li>
-                                <li>Pipeline covers email classification, entity extraction, PO/WO verification, and
-                                    mismatch detection</li>
-                                <li>Orchestrated with Apache Airflow, PostgreSQL + object storage, with a feedback loop
-                                    into the ERP system</li>
-                                <li>97% classification accuracy, 85% reduction in manual data entry, fully offline with
-                                    zero cloud dependency</li>
+                                <li>Architected DeltaZero, a two-stage order-validation pipeline: Llama 3.1 8B for error
+                                    detection with a 70B judge model, confidence-tiered routing, and deterministic
+                                    normalization as a pre-LLM filter — 97% detection accuracy on a manually labeled
+                                    ground-truth set</li>
+                                <li>Reduced order-entry errors from a client-observed ~20% baseline to under 1% on
+                                    evaluated samples; flags mismatches in NetSuite for human review and now runs
+                                    on-prem in production</li>
+                                <li>Built a client-facing RAG assistant over 3,500+ pages of technical and financial
+                                    documentation using recursive chunking, vector retrieval, and cross-encoder
+                                    reranking</li>
+                                <li>Containerized the stack with Docker and set up CI/CD for reproducible deployment and
+                                    clean handover</li>
+                                <li>Deploy Odoo ERP for manufacturing clients and design courses on Prompt Engineering
+                                    and Agentic AI for industry audiences</li>
                             </ul>
                             <div class="tech-tags">
                                 <span class="tag">Python</span>
-                                <span class="tag">NLP</span>
                                 <span class="tag">LLMs</span>
-                                <span class="tag">Apache Airflow</span>
+                                <span class="tag">RAG</span>
+                                <span class="tag">NetSuite</span>
                                 <span class="tag">PostgreSQL</span>
-                                <span class="tag">Generative AI</span>
+                                <span class="tag">Docker</span>
                             </div>
+                        </div>
                         </div>
 
                     </div>
@@ -179,25 +191,29 @@
                         </div>
                         <div class="exp-content">
                             <h3 class="exp-role">Research Assistant</h3>
-                            <h4 class="exp-team">Digital Twin & Simulation</h4>
+                            <h4 class="exp-team">Digital Twin &amp; Optimization</h4>
                             <p class="exp-company">HPE × University of Houston</p>
                             <ul class="exp-bullets">
-                                <li>Cut per-unit processing time by 90% (20 min → 2 min) by building a digital twin of
-                                    an 8-station reverse supply chain with automated document parsing and QR-based
-                                    throughput tracking</li>
-                                <li>Delivered a full-stack simulation platform (Python FastAPI + React 19 + Three.js)
-                                    with real-time 3D visualization, what-if analysis, and LLM-powered natural language
-                                    Q&A</li>
-                                <li>Presented findings to engineering leadership (VP-level); program director publicly
-                                    endorsed the project on LinkedIn</li>
+                                <li>Led development of an 8-station reverse-supply-chain digital twin using discrete-event
+                                    simulation (SimPy) for bottleneck detection via dwell-time analysis and what-if
+                                    scenario modeling</li>
+                                <li>Cut per-unit processing time by 90% (20 min → 2 min) with QR-based unit tracking and
+                                    automated document parsing</li>
+                                <li>Engineered the full-stack platform (Python, FastAPI, React 19, Three.js, SQLite) with
+                                    real-time 3D visualization and an on-device LLM (Ollama, Phi-3 Mini) for natural
+                                    language Q&amp;A over operational KPIs</li>
+                                <li>Presented to HPE VP-level leadership, identifying potential for 15%+ throughput
+                                    improvement</li>
                             </ul>
                             <div class="tech-tags">
                                 <span class="tag">Python</span>
+                                <span class="tag">FastAPI</span>
                                 <span class="tag">React.js</span>
                                 <span class="tag">Three.js</span>
                                 <span class="tag">SimPy</span>
-                                <span class="tag">Generative AI</span>
+                                <span class="tag">Ollama</span>
                             </div>
+                        </div>
                         </div>
 
                     </div>
@@ -213,7 +229,7 @@
                         </div>
                         <div class="exp-content">
                             <h3 class="exp-role">Research Intern — ML</h3>
-                            <p class="exp-company">FLAME University</p>
+                            <p class="exp-company">FLAME University · Pune, India</p>
                             <ul class="exp-bullets">
                                 <li>Published peer-reviewed Springer paper on ML-based protein function prediction,
                                     training ProtBERT/ESM2 + SVM ensemble on 30K+ protein sequences with 98.3% accuracy
@@ -245,6 +261,37 @@
                 </div>
 
                 <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3 class="project-title">DeltaZero</h3>
+                            <p class="project-desc">Two-stage LLM order-validation pipeline for a manufacturing client.
+                                Llama 3.1 8B detects errors, a 70B judge confirms, and confidence-tiered routing sends
+                                flagged mismatches to NetSuite for human review. 97% detection accuracy.</p>
+                            <div class="tech-tags">
+                                <span class="tag">Llama 3.1</span>
+                                <span class="tag">NetSuite</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">Docker</span>
+                            </div>
+                        </div>
+                        <div class="project-link">Client project</div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3 class="project-title">Client RAG Assistant</h3>
+                            <p class="project-desc">Client-facing assistant over 3,500+ pages of technical and financial
+                                documentation, with recursive chunking, vector retrieval, and cross-encoder reranking
+                                for better evidence selection.</p>
+                            <div class="tech-tags">
+                                <span class="tag">RAG</span>
+                                <span class="tag">Vector Search</span>
+                                <span class="tag">Reranking</span>
+                            </div>
+                        </div>
+                        <div class="project-link">Client project</div>
+                    </div>
+
                     <a href="https://github.com/mugunthank7/FeedForward-Ai-news" target="_blank" class="project-card">
                         <div class="project-content">
                             <h3 class="project-title">FeedForward</h3>
@@ -288,6 +335,21 @@
                                 <span class="tag">PyTorch</span>
                                 <span class="tag">OpenCV</span>
                                 <span class="tag">VGG-19</span>
+                            </div>
+                        </div>
+                        <div class="project-link">GitHub →</div>
+                    </a>
+
+                    <a href="https://github.com/mugunthank7/nyc-tlc-data-engineering-pipeline" target="_blank"
+                        class="project-card">
+                        <div class="project-content">
+                            <h3 class="project-title">NYC TLC Data Pipeline</h3>
+                            <p class="project-desc">Automated scraping, parquet consolidation, reproducible sampling,
+                                feature engineering, and KMeans clustering over NYC taxi trip data.</p>
+                            <div class="tech-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Pandas</span>
+                                <span class="tag">KMeans</span>
                             </div>
                         </div>
                         <div class="project-link">GitHub →</div>
@@ -383,6 +445,7 @@
                             <h3 class="edu-degree">M.S. Engineering Data Science & AI</h3>
                             <p class="edu-school">University of Houston · 3.8 GPA</p>
                             <p class="edu-date">Aug 2025 — May 2027</p>
+                            <p class="edu-courses">Machine Learning, Neural Networks, Statistics, Cloud Computing (AWS, GCP), Biomedical Data Mining, Predictive Analytics</p>
                         </div>
                         <div class="right-logo-box">
                             <img src="./assets/UH_logo.png" alt="UH Logo">
@@ -394,7 +457,63 @@
                             <h3 class="edu-degree">B.Tech Artificial Intelligence Engineering</h3>
                             <p class="edu-school">Amrita Vishwa Vidyapeetham · 3.7 GPA</p>
                             <p class="edu-date">Aug 2021 — May 2025</p>
+                            <p class="edu-courses">Machine Learning, Deep Learning, Big Data Analytics, NLP, Distributed Systems</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="skills" class="content-section bg-tertiary fade-up">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">SKILLS</h2>
+                    <span class="section-number">06</span>
+                </div>
+
+                <div class="skills-list">
+                    <div class="skill-group">
+                        <h3 class="skill-label">AI / ML</h3>
+                        <div class="tech-tags">
+                            <span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">Scikit-learn</span><span class="tag">XGBoost</span><span class="tag">Hugging Face</span><span class="tag">OpenCV</span><span class="tag">Deep Learning</span><span class="tag">NLP</span><span class="tag">Computer Vision</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="skill-label">LLM Engineering</h3>
+                        <div class="tech-tags">
+                            <span class="tag">RAG</span><span class="tag">Agentic Workflows</span><span class="tag">Multi-Agent Systems</span><span class="tag">Prompt Engineering</span><span class="tag">Fine-Tuning</span><span class="tag">Embeddings</span><span class="tag">Vector Search</span><span class="tag">LLM Evaluation</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="skill-label">Agents &amp; Protocols</h3>
+                        <div class="tech-tags">
+                            <span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">Google ADK</span><span class="tag">MCP</span><span class="tag">A2A</span><span class="tag">CrewAI</span><span class="tag">Firecrawl</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="skill-label">Digital Twins &amp; Infra</h3>
+                        <div class="tech-tags">
+                            <span class="tag">SimPy</span><span class="tag">Discrete-Event Simulation</span><span class="tag">What-If Analysis</span><span class="tag">Docker</span><span class="tag">FastAPI</span><span class="tag">CI/CD</span><span class="tag">Git</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="skill-label">Data &amp; Tools</h3>
+                        <div class="tech-tags">
+                            <span class="tag">PostgreSQL</span><span class="tag">pgvector</span><span class="tag">Qdrant</span><span class="tag">ChromaDB</span><span class="tag">MongoDB</span><span class="tag">Spark</span><span class="tag">Pandas</span><span class="tag">Vertex AI</span><span class="tag">Supabase</span><span class="tag">Streamlit</span><span class="tag">SHAP</span><span class="tag">LIME</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="skill-label">Languages</h3>
+                        <div class="tech-tags">
+                            <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Java</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="skill-label">Leadership</h3>
+                        <p class="skill-text">Led Python/ML workshops for 70+ students · Mentored 10+ juniors on AI/DS
+                            projects · INFORMS member · Content creator, UH Wellness Influencer Program</p>
                     </div>
                 </div>
             </div>

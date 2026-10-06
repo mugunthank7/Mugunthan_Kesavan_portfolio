@@ -735,6 +735,50 @@ a:hover {
     text-transform: uppercase;
 }
 
+.edu-courses {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+    margin-top: 0.75rem;
+    max-width: 640px;
+}
+
+/* ==========================================================================
+   SKILLS SECTION
+   ========================================================================== */
+.skills-list {
+    display: grid;
+    gap: 2rem;
+}
+
+.skill-group {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 1.5rem;
+    align-items: baseline;
+}
+
+.skill-label {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.skill-text {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .skill-group {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+}
+
 /* ==========================================================================
    BEYOND THE TERMINAL
    ========================================================================== */
