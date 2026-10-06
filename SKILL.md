@@ -1,39 +1,34 @@
 # Portfolio Design Skill
 
 ## Owner
-Mugunthan Kesavan — AI/ML Engineer, MS Data Science & AI @ University of Houston
+Mugunthan "Mugu" Kesavan — AI/ML Engineer, MS Engineering Data Science & AI @ University of Houston
 
-## Design System
+## Design System (sky + blush pastel, light theme)
 
-### Colors
-- Background: #000000 (primary), #0A0A0A (cards), #141414 (alternating sections)
-- Text: #FFFFFF (primary), #999999 (secondary), #555555 (tertiary)
-- Accent: #0066FF (links and hover states ONLY)
-- Border: #222222
+### Colors (CSS variables in css/style.css)
+- Background: #F5FAFF (page), #FFFFFF (cards), #EAF3FD (alternating sections)
+- Text: #2A3347 (primary), #566480 (secondary), #6F7C95 (tertiary)
+- Accent: #C4467A (links, highlights); hover #9E2F5E
+- Pastels: blush #FADCE6, sky #CFE6FB, mint #D4F1E4, butter #FFF1C9
+- Border: #D8E6F6
 
 ### Typography
-- Display: Clash Display 700/800 (Fontshare) or Syne 700/800 (Google Fonts)
-- Body: Source Serif 4 400/600 (Google Fonts)
-- Mono: JetBrains Mono 400/500 (Google Fonts)
+- Display: Bricolage Grotesque 600/800 (Google Fonts)
+- Body: Source Serif 4 (Google Fonts)
+- Mono: JetBrains Mono (Google Fonts)
+- Handwritten accent (nickname "Mugu", "On LinkedIn" label): Caveat 600/700
 
 ### Rules
-- NO gradients, NO rounded corners, NO purple, NO Inter/Roboto/Arial
-- NO component libraries (Bootstrap, Tailwind, Material UI)
-- NO React, NO build tools — vanilla HTML/CSS/JS only
-- Accent blue ONLY on links and hover states
-- Sharp edges everywhere
-- Film grain overlay at opacity 0.03
-- Animations: subtle, purposeful, scroll-triggered via IntersectionObserver
+- Vanilla HTML/CSS/JS only: no frameworks, no build tools
+- Rounded cards (18px), soft blue-tinted shadows, pill tags
+- Subtle gradients allowed only as soft pastel background glows
+- Animations subtle, scroll-triggered via IntersectionObserver
 - Mobile-first responsive design
 
-### Layout
-- Max content width: 1200px, centered
-- Section padding: 120px vertical (desktop), 80px (mobile)
-- Asymmetric grids with generous whitespace
-- Horizontal 1px dividers between sections
+## Content
+- Nickname: Mugu (hero tag line, About, footer, page title)
+- Experience entries can have a LinkedIn sidebar, driven by data/linkedin.json
+  (`<aside class="exp-sidebar" data-exp="KEY">` filled by js/main.js)
 
-### Animations
-- Entrance: fade-up with 30px translateY, 0.6s ease-out
-- Stagger: 0.1s delay between sibling elements
-- Nav: transparent → solid on scroll
-- Cards: border-color transition + scale(1.02) on hover
+## Git
+- Commits are authored by the repo owner only. No AI co-author or session trailers.
