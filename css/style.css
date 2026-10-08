@@ -1104,16 +1104,8 @@ h1, h2, h3, h4, h5, h6 {
 .nav-logo:hover { color: var(--accent); }
 
 .stat-value { color: var(--accent); }
-.about-stats .stat-item {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius);
-    padding: 1rem 1.5rem;
-    box-shadow: var(--shadow-soft);
-    min-width: 260px;
-}
-.about-stats { gap: 1.25rem; }
-.stat-value { font-size: 3rem; }
+.about-stats { gap: 2.5rem; }
+.stat-value { font-size: 3.5rem; }
 
 .tag {
     border: none;
@@ -1264,7 +1256,6 @@ footer { background: rgba(255, 255, 255, 0.5); }
     .beyond-text-block { order: 1; }
     .beyond-bg-right { order: 3; }
     .exp-sidebar { max-height: none; }
-    .about-stats .stat-item { min-width: 0; width: 100%; }
 }
 
 /* hero tint + readable nav over the photo */
