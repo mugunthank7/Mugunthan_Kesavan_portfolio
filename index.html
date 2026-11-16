@@ -31,7 +31,7 @@
         rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./css/style.css?v=5">
+    <link rel="stylesheet" href="./css/style.css?v=6">
 
     <!-- Scripts -->
     <script src="./js/main.js?v=5" defer></script>
@@ -117,8 +117,9 @@
                 <div class="about-grid2">
                     <div class="about-text">
                         <p class="about-lead">I make AI that actually gets used.</p>
-                        <p>I'm Mugu, an AI/ML engineer and grad student at the University of Houston. At TMAC I built a two-stage LLM pipeline that catches order-entry errors for a manufacturing client, plus a RAG assistant over 3,500+ pages of their documents. Both run on the client's own servers.</p>
-                        <p>Before that I built a digital twin of HPE's reverse supply chain and presented it to HPE leadership. I've published two peer-reviewed NLP papers, and I'd rather ship something people rely on than demo something people clap for.</p>
+                        <p>I'm Mugu, an AI/ML engineer and grad student at the University of Houston. At TMAC I built DeltaZero, an LLM pipeline that checks a manufacturer's orders against their ERP before mistakes ship. Order-entry errors dropped from about 20% to under 1% on evaluated samples, going after roughly <strong>$100K a year</strong> in logistics losses.</p>
+                        <p>At HPE I built ReVolve, a digital twin of their reverse supply chain. It showed a <strong>15%+ throughput gain</strong> before anyone changed a real process, and HPE is now extending it to their Mexico facility.</p>
+                        <p class="sowhat"><b>So what?</b> I'm the engineer you bring in when a demo has to become something people use every day, with numbers the business can check. I've published two peer-reviewed NLP papers, but I judge my work by whether it's still running months later.</p>
                         <p>Outside work: guitar, skateboarding, and a lot of food.</p>
                     </div>
                     <figure class="polaroid tilt-r">
@@ -151,13 +152,9 @@
                             <h4 class="exp-team">AI Systems &amp; Automation</h4>
                             <p class="exp-company">TMAC × University of Houston</p>
                             <ul class="exp-bullets">
-                                <li>Architected DeltaZero, a two-stage order-validation pipeline: Llama 3.1 8B for error
-                                    detection with a 70B judge model, confidence-tiered routing, and deterministic
-                                    normalization as a pre-LLM filter — 97% detection accuracy on a manually labeled
-                                    ground-truth set</li>
-                                <li>Reduced order-entry errors from a client-observed ~20% baseline to under 1% on
-                                    evaluated samples; flags mismatches in NetSuite for human review and now runs
-                                    on-prem in production</li>
+                                <li>Targeted roughly $100K/year in client logistics losses from manual ERP order-entry errors, cutting the error rate from ~20% to under 1% on evaluated samples</li>
+                                <li>Architected DeltaZero, a two-stage LLM pipeline (Claude Sonnet judge, confidence-tiered routing) validating orders against NetSuite; benchmarking judges raised precision from 71% to 100% at 87% recall</li>
+                                <li>Run biweekly reviews with client stakeholders on progress and metrics; after pilot feedback, re-architecting stage 1 so purchase orders become the source of truth checked against NetSuite</li>
                                 <li>Built a client-facing RAG assistant over 3,500+ pages of technical and financial
                                     documentation using recursive chunking, vector retrieval, and cross-encoder
                                     reranking</li>
@@ -260,11 +257,11 @@
                         <h3>DeltaZero</h3>
                         <p class="case-line">Stop bad orders before they hit the ERP.</p>
                         <dl>
-                            <dt>Problem</dt><dd>Manual order entry had a client-observed ~20% error rate.</dd>
-                            <dt>Build</dt><dd>Llama 3.1 8B flags errors, a 70B judge confirms, confidence tiers route the rest. Deterministic normalization runs first to cut LLM load.</dd>
-                            <dt>Result</dt><dd><span class="big"><span class="count" data-to="97">97</span>%</span> detection accuracy on a labeled set, under 1% errors on evaluated samples, running on-prem in production.</dd>
+                            <dt>Problem</dt><dd>Manual order entry had a client-observed ~20% error rate, costing roughly $100K a year in logistics losses.</dd>
+                            <dt>Build</dt><dd>Two-stage LLM pipeline with a Claude Sonnet judge and confidence-tiered routing, validating orders against NetSuite. Benchmarking judges raised precision from 71% to 100% at 87% recall.</dd>
+                            <dt>Result</dt><dd>Errors from ~20% to <span class="big">&lt;<span class="count" data-from="20" data-to="1">1</span>%</span> on evaluated samples, running on the client's own servers.</dd>
                         </dl>
-                        <div class="case-stack"><span class="tag">LLaMA</span><span class="tag">NetSuite</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span></div>
+                        <div class="case-stack"><span class="tag">Claude Sonnet</span><span class="tag">NetSuite</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span></div>
                     </article>
                     <article class="case c-sky tilt3d">
                         <span class="case-kicker">HPE × UH · 2026</span>
@@ -317,10 +314,9 @@
                         <div class="project-content">
                             <h3 class="project-title">DeltaZero</h3>
                             <p class="project-desc">Two-stage LLM order-validation pipeline for a manufacturing client.
-                                Llama 3.1 8B detects errors, a 70B judge confirms, and confidence-tiered routing sends
-                                flagged mismatches to NetSuite for human review. 97% detection accuracy.</p>
+                                A Claude Sonnet judge and confidence-tiered routing flag mismatches in NetSuite for human review. Precision 71% → 100% at 87% recall.</p>
                             <div class="tech-tags">
-                                <span class="tag">Llama 3.1</span>
+                                <span class="tag">Claude Sonnet</span>
                                 <span class="tag">NetSuite</span>
                                 <span class="tag">PostgreSQL</span>
                                 <span class="tag">Docker</span>
