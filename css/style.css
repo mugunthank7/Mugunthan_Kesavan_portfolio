@@ -1475,3 +1475,4 @@ section.content-section { padding-top: 2.5rem; padding-bottom: 3.5rem; }
 .pol { width: 26%; max-width: 280px; }
 .proj-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; border: 2px solid var(--ink); border-radius: 12px; margin-bottom: .8rem; cursor: zoom-in; display: block; }
 @media (max-width: 800px) { .board { height: auto; } .pol { width: auto; max-width: none; } }
+.pol img[src*="hpe-leadership"] { object-position: 70% 50%; }
