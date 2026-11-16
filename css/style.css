@@ -1468,3 +1468,10 @@ section.content-section { padding-top: 2.5rem; padding-bottom: 3.5rem; }
 .exp-photos img:nth-child(odd) { transform: rotate(-3deg); } .exp-photos img:nth-child(even) { transform: rotate(3deg); }
 .exp-photos img:hover { transform: rotate(0) scale(1.08); z-index: 2; position: relative; }
 @media (max-width: 800px) { .exp-photos img { width: calc(33% - .6rem); height: 80px; } }
+.board { height: 1080px; }
+.p1 { left: 2%; top: 3%; rotate: -6deg; } .p2 { left: 36%; top: 1%; rotate: 3deg; } .p3 { left: 70%; top: 4%; rotate: -4deg; }
+.p4 { left: 6%; top: 36%; rotate: 5deg; } .p5 { left: 39%; top: 35%; rotate: -3deg; } .p6 { left: 72%; top: 37%; rotate: 6deg; }
+.p7 { left: 3%; top: 68%; rotate: -4deg; } .p8 { left: 37%; top: 67%; rotate: 4deg; } .p9 { left: 70%; top: 69%; rotate: -6deg; }
+.pol { width: 26%; max-width: 280px; }
+.proj-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; border: 2px solid var(--ink); border-radius: 12px; margin-bottom: .8rem; cursor: zoom-in; display: block; }
+@media (max-width: 800px) { .board { height: auto; } .pol { width: auto; max-width: none; } }
