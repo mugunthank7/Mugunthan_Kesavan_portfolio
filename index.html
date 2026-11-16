@@ -47,8 +47,10 @@
             <div class="nav-links">
                 <a href="#about" class="nav-item">About</a>
                 <a href="#experience" class="nav-item">Experience</a>
+                <a href="#cases" class="nav-item">Case Studies</a>
                 <a href="#projects" class="nav-item">Projects</a>
                 <a href="#publications" class="nav-item">Publications</a>
+                <a href="#timeline" class="nav-item">Timeline</a>
                 <a href="#play" class="nav-item">Play</a>
                 <a href="#contact" class="nav-item">Contact</a>
             </div>
@@ -63,35 +65,41 @@
         <div class="mobile-nav-links">
             <a href="#about" class="mobile-nav-item">About</a>
             <a href="#experience" class="mobile-nav-item">Experience</a>
-            <a href="#projects" class="mobile-nav-item">Projects</a>
+            <a href="#cases" class="mobile-nav-item">Case Studies</a>
+                <a href="#projects" class="mobile-nav-item">Projects</a>
             <a href="#publications" class="mobile-nav-item">Publications</a>
-            <a href="#play" class="mobile-nav-item">Play</a>
+            <a href="#timeline" class="mobile-nav-item">Timeline</a>
+                <a href="#play" class="mobile-nav-item">Play</a>
             <a href="#contact" class="mobile-nav-item">Contact</a>
         </div>
     </div>
 
     <main>
-        <section id="hero" class="hero-section">
-            <div class="hero-image-bg animate-in"></div>
-            <div class="hero-container">
-                <div class="hero-content">
-                    <h1 class="hero-title">
-                        <span class="hero-name-first animate-in">MUGUNTHAN</span>
-                        <span class="hero-name-last animate-in">KESAVAN</span>
-                    </h1>
-                    <p class="hero-nickname animate-in">call me <strong>Mugu</strong></p>
-                    <p class="hero-tagline animate-in">I build AI systems that replace<br>manual work with intelligent
-                        automation.</p>
-                    <p class="hero-subtitle animate-in">AI/ML Engineer · LLM Systems &amp; Generative AI · Houston, TX</p>
-                    <a href="./resume/Mugunthan_Kesavan_AIML_Engineer.pdf" download="Mugunthan_Kesavan_AIML_Engineer.pdf" class="btn-minimal animate-in">
-                        DOWNLOAD RESUME <span class="arrow">↓</span>
-                    </a>
-                    <a href="#about" class="scroll-indicator animate-in" aria-label="Scroll down">
-                        ↓ scroll
-                    </a>
+        <section id="hero" class="hero2">
+            <div class="hero2-text">
+                <span class="sticker st-hi animate-in">hi, i'm</span>
+                <h1 class="hero2-name animate-in">Mugunthan<br><span class="hl">"Mugu"</span> Kesavan</h1>
+                <p class="hero2-tag animate-in">I build AI that does the boring work, so people don't have to. Then I ship it to production.</p>
+                <div class="hero2-chips animate-in">
+                    <span class="chip c1">LLM systems</span><span class="chip c2">RAG</span><span class="chip c3">Digital twins</span><span class="chip c4">Houston, TX</span>
+                </div>
+                <div class="hero2-cta animate-in">
+                    <a href="./resume/Mugunthan_Kesavan_AIML_Engineer.pdf" download="Mugunthan_Kesavan_AIML_Engineer.pdf" class="btn-pop">Download resume ↓</a>
+                    <a href="#cases" class="btn-pop alt">See my work →</a>
                 </div>
             </div>
+            <div class="hero2-photo animate-in">
+                <img src="./assets/headshot.jpg" alt="Mugu smiling in a suit" width="600" height="600">
+                <span class="sticker st-ml">M.S. @ UH</span>
+                <span class="sticker st-prod">ships to prod</span>
+                <span class="sticker st-skate">🛹 skater</span>
+            </div>
         </section>
+
+        <div class="marquee" aria-hidden="true"><div class="marquee-track">
+            <span>PYTHON ✦ LLMS ✦ RAG ✦ DIGITAL TWINS ✦ FASTAPI ✦ DOCKER ✦ POSTGRESQL ✦ LANGGRAPH ✦ MCP ✦ PYTORCH ✦ </span>
+            <span>PYTHON ✦ LLMS ✦ RAG ✦ DIGITAL TWINS ✦ FASTAPI ✦ DOCKER ✦ POSTGRESQL ✦ LANGGRAPH ✦ MCP ✦ PYTORCH ✦ </span>
+        </div></div>
 
         <hr class="section-divider">
 
@@ -102,17 +110,17 @@
                     <span class="section-number">01</span>
                 </div>
 
-                <div class="about-grid about-solo">
+                <div class="about-grid2">
                     <div class="about-text">
-                        <p>Hi, I'm Mugunthan, but everyone calls me <span class="nick">Mugu</span>. I'm an AI/ML engineer who builds systems that ship — not just models that demo. Right now I'm
-                            delivering an order-validation pipeline and a client-facing RAG assistant for a
-                            manufacturing client, running on-prem in production. Before that, I built a digital twin of
-                            HPE's reverse supply chain. I've published 2 peer-reviewed papers, and I believe the best AI
-                            is the kind you never notice because it just works.</p>
-                        <p>M.S. Engineering Data Science &amp; AI at the University of Houston. B.Tech AI Engineering from
-                            Amrita Vishwa Vidyapeetham.</p>
+                        <p class="about-lead">I make AI that actually gets used.</p>
+                        <p>I'm Mugu, an AI/ML engineer and grad student at the University of Houston. At TMAC I built a two-stage LLM pipeline that catches order-entry errors for a manufacturing client, plus a RAG assistant over 3,500+ pages of their documents. Both run on the client's own servers.</p>
+                        <p>Before that I built a digital twin of HPE's reverse supply chain and presented it to HPE leadership. I've published two peer-reviewed NLP papers, and I'd rather ship something people rely on than demo something people clap for.</p>
+                        <p>Outside work: guitar, skateboarding, and a lot of food.</p>
                     </div>
-
+                    <figure class="polaroid tilt-r">
+                        <img src="./assets/aws-conference.jpg" alt="Mugu at the AI Loves Data enterprise AI builders conference in San Francisco" loading="lazy">
+                        <figcaption>AI Loves Data SF, Nov 2026</figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
@@ -238,11 +246,64 @@
 
         <hr class="section-divider">
 
+        <section id="cases" class="content-section fade-up">
+            <div class="section-container">
+                <div class="section-header"><h2 class="section-title">CASE STUDIES</h2><span class="section-number">03</span></div>
+                <div class="case-grid">
+                    <article class="case c-pink">
+                        <span class="case-kicker">TMAC · 2026</span>
+                        <h3>DeltaZero</h3>
+                        <p class="case-line">Stop bad orders before they hit the ERP.</p>
+                        <dl>
+                            <dt>Problem</dt><dd>Manual order entry had a client-observed ~20% error rate.</dd>
+                            <dt>Build</dt><dd>Llama 3.1 8B flags errors, a 70B judge confirms, confidence tiers route the rest. Deterministic normalization runs first to cut LLM load.</dd>
+                            <dt>Result</dt><dd>97% detection accuracy on a labeled set, under 1% errors on evaluated samples, running on-prem in production.</dd>
+                        </dl>
+                        <div class="case-stack"><span class="tag">LLaMA</span><span class="tag">NetSuite</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span></div>
+                    </article>
+                    <article class="case c-sky">
+                        <span class="case-kicker">HPE × UH · 2026</span>
+                        <h3>ReVolve</h3>
+                        <p class="case-line">A reverse supply chain you can test before you touch it.</p>
+                        <dl>
+                            <dt>Problem</dt><dd>Hard to see bottlenecks across an 8-station returns flow.</dd>
+                            <dt>Build</dt><dd>SimPy discrete-event twin, live 3D view in React and Three.js, QR unit tracking, and an on-device LLM for what-if questions.</dd>
+                            <dt>Result</dt><dd>Per-unit processing cut from 20 to 2 minutes. Presented to HPE leadership with a projected 15%+ throughput gain.</dd>
+                        </dl>
+                        <div class="case-stack"><span class="tag">SimPy</span><span class="tag">FastAPI</span><span class="tag">Three.js</span><span class="tag">Ollama</span></div>
+                    </article>
+                    <article class="case c-mint">
+                        <span class="case-kicker">TMAC · 2026</span>
+                        <h3>Client RAG Assistant</h3>
+                        <p class="case-line">Ask the documents, get the page.</p>
+                        <dl>
+                            <dt>Problem</dt><dd>Staff were digging through technical and financial docs by hand.</dd>
+                            <dt>Build</dt><dd>Recursive chunking, vector retrieval, and a cross-encoder reranker over 3,500+ pages.</dd>
+                            <dt>Result</dt><dd>Evidence-backed answers for admin staff, integrated with DeltaZero.</dd>
+                        </dl>
+                        <div class="case-stack"><span class="tag">RAG</span><span class="tag">Reranking</span><span class="tag">Vector search</span></div>
+                    </article>
+                    <article class="case c-butter">
+                        <span class="case-kicker">Hackathon</span>
+                        <h3>Talk to Your Plant</h3>
+                        <p class="case-line">Ask a factory floor questions in plain language.</p>
+                        <dl>
+                            <dt>Idea</dt><dd>A multimodal plus GraphRAG twin of an automotive assembly plant.</dd>
+                            <dt>Me</dt><dd>Wrote all the code for our team's entry. We didn't win, and I'm still building on it.</dd>
+                        </dl>
+                        <div class="case-stack"><span class="tag">Multimodal</span><span class="tag">GraphRAG</span></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
         <section id="projects" class="content-section fade-up">
             <div class="section-container">
                 <div class="section-header">
                     <h2 class="section-title">PROJECTS</h2>
-                    <span class="section-number">03</span>
+                    <span class="section-number">04</span>
                 </div>
 
                 <div class="projects-grid">
@@ -380,7 +441,7 @@
             <div class="section-container">
                 <div class="section-header">
                     <h2 class="section-title">PUBLICATIONS</h2>
-                    <span class="section-number">04</span>
+                    <span class="section-number">05</span>
                 </div>
 
                 <div class="publications-list">
@@ -421,7 +482,7 @@
             <div class="section-container">
                 <div class="section-header">
                     <h2 class="section-title">EDUCATION</h2>
-                    <span class="section-number">05</span>
+                    <span class="section-number">06</span>
                 </div>
 
                 <div class="education-grid">
@@ -455,7 +516,7 @@
             <div class="section-container">
                 <div class="section-header">
                     <h2 class="section-title">SKILLS</h2>
-                    <span class="section-number">06</span>
+                    <span class="section-number">07</span>
                 </div>
 
                 <div class="skills-list">
@@ -501,6 +562,22 @@
                             projects · INFORMS member · Content creator, UH Wellness Influencer Program</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="timeline" class="content-section fade-up">
+            <div class="section-container">
+                <div class="section-header"><h2 class="section-title">TIMELINE</h2><span class="section-number">08</span></div>
+                <ol class="tl">
+                    <li><time>Nov 2026</time><b>AI Loves Data SF</b><span>Enterprise AI builders conference in San Francisco.</span></li>
+                    <li><time>Sep 2026</time><b>DeltaZero goes live</b><span>Live demo caught a real order error in front of the client's CEO. It led to a talk about more AI projects.</span></li>
+                    <li><time>Sep 2026</time><b>UH Wellness creator</b><span>Content creator, UH Wellness Influencer Program.</span></li>
+                    <li><time>Jul 2026</time><b>Talk at Amrita</b><span>Spoke back at my alma mater.</span></li>
+                    <li><time>May 2026</time><b>ReVolve at HPE</b><span>Presented the digital twin to HPE leadership, then lunch with the VPs.</span></li>
+                    <li><time>Apr 2026</time><b>Anthropic Academy</b><span>Completed Anthropic Academy courses.</span></li>
+                </ol>
             </div>
         </section>
 
