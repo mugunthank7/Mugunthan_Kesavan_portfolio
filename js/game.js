@@ -39,7 +39,10 @@
     function pop(text, color) { S.pops.push({ text: text, x: S.p.x, y: S.p.y - 80, t: 0, color: color || INK }); }
 
     function track(path, title) { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: path, title: title, event: true }); }
+    var locked = false;
+    window.SkateRun = { lock: function (b) { locked = !!b; } };
     function act() {
+        if (locked) return;
         if (S.mode === 'idle') { S.mode = 'run'; track('game-start', 'Skate Run: started'); return; }
         if (S.mode === 'over') { if (S.t > 0.6) { reset(); S.mode = 'run'; track('game-retry', 'Skate Run: retry'); } return; }
         var p = S.p;
@@ -76,6 +79,7 @@
         var sc = Math.floor(S.score);
         if (sc > best) { best = sc; try { localStorage.setItem('skaterun2-best', best); } catch (e) {} }
         if (bestEl) bestEl.textContent = best;
+        document.dispatchEvent(new CustomEvent('skate:over', { detail: { score: Math.floor(S.score) } }));
     }
 
     function spawn() {
@@ -307,6 +311,8 @@
     document.addEventListener('visibilitychange', function () { visible = !document.hidden; last = 0; });
     document.addEventListener('keydown', function (e) {
         if (!inView) return;
+        var tg = e.target && e.target.tagName;
+        if (tg === 'INPUT' || tg === 'TEXTAREA' || tg === 'BUTTON') return;
         if (e.code === 'Space' || e.code === 'ArrowUp' || e.code === 'KeyW') { e.preventDefault(); if (!e.repeat) act(); }
     });
     c.addEventListener('pointerdown', function (e) { e.preventDefault(); act(); });

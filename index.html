@@ -31,11 +31,12 @@
         rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./css/style.css?v=8">
+    <link rel="stylesheet" href="./css/style.css?v=9">
 
     <!-- Scripts -->
     <script src="./js/main.js?v=6" defer></script>
-    <script src="./js/game.js?v=8" defer></script>
+    <script src="./js/game.js?v=9" defer></script>
+    <script src="./js/leaderboard.js?v=1" defer></script>
     <script src="./js/fx.js?v=5" defer></script>
     <script data-goatcounter="https://mugunthan.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
@@ -602,9 +603,23 @@
             <div class="section-container">
                 <h2 class="section-title">Take a Break</h2>
                 <p class="game-sub">Skate Run. <b>Space / tap</b> to ollie, tap again in the air to flip. Grind ledges, hit ramps, chain combos. Land mid-flip and you bail.</p>
-                <div class="game-wrap">
-                    <canvas id="game" width="900" height="320" aria-label="Skateboard runner mini game"></canvas>
-                    <div class="game-bar"><span>Score <b id="g-score">0</b></span><span>Best <b id="g-best">0</b></span></div>
+                <div class="game-area">
+                    <div class="game-wrap">
+                        <canvas id="game" width="900" height="320" aria-label="Skateboard runner mini game"></canvas>
+                        <div class="game-bar"><span>Score <b id="g-score">0</b></span><span>Best <b id="g-best">0</b></span></div>
+                        <form class="lb-form" hidden autocomplete="off">
+                            <p class="lb-form-title">Nice run! <b class="lb-form-score"></b> points</p>
+                            <p class="lb-form-sub">Put it on the leaderboard? Your name and org are shown publicly.</p>
+                            <input name="name" maxlength="24" placeholder="Name" required>
+                            <input name="org" maxlength="40" placeholder="Company or school (optional)">
+                            <div class="lb-form-btns"><button type="submit" class="btn-pop">Submit score</button><button type="button" class="btn-pop alt lb-skip">No thanks</button></div>
+                            <p class="lb-form-msg" aria-live="polite"></p>
+                        </form>
+                    </div>
+                    <aside class="leaderboard" hidden>
+                        <h3>Leaderboard</h3>
+                        <ol class="lb-list"><li class="lb-empty">loading…</li></ol>
+                    </aside>
                 </div>
             </div>
         </section>
