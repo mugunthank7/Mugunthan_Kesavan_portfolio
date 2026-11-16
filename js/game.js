@@ -30,7 +30,7 @@
     function reset() {
         S = {
             mode: 'idle', t: 0, speed: 250, dist: 0, score: 0,
-            p: { x: 150, y: GROUND, vy: 0, air: false, grind: null, trick: null, tt: 0, squash: 0, ang: 0 },
+            p: { x: 150, y: GROUND, vy: 0, airT: 0, air: false, grind: null, trick: null, tt: 0, squash: 0, ang: 0 },
             combo: 0, bank: 0, items: [], pops: [], nextSpawn: 500, trickIdx: 0, shake: 0, far: 0, mid: 0
         };
     }
@@ -43,7 +43,7 @@
         if (S.mode === 'over') { if (S.t > 0.6) { reset(); S.mode = 'run'; } return; }
         var p = S.p;
         if (!p.air) { // ollie (from ground or off a grind)
-            p.vy = OLLIE; p.air = true;
+            p.vy = OLLIE; p.air = true; p.airT = 0;
             if (p.grind) { p.grind = null; }
         } else if (!p.trick) { // trick
             var tr = TRICKS[S.trickIdx % TRICKS.length]; S.trickIdx++;
@@ -130,6 +130,7 @@
 
         // physics
         if (p.air) {
+            p.airT += dt;
             var prevY = p.y;
             p.vy += G * dt; p.y += p.vy * dt;
             if (p.vy > 0) {
@@ -143,7 +144,7 @@
             if (p.air && p.y >= GROUND) { land(null); if (S.mode !== 'run') return; }
         } else if (p.grind) {
             S.bank += 60 * dt; S.score += 0;
-            if (p.x > p.grind.x + p.grind.w) { p.grind = null; p.air = true; p.vy = -120; S.combo++; }
+            if (p.x > p.grind.x + p.grind.w) { p.grind = null; p.air = true; p.vy = -120; p.airT = 1; S.combo++; }
         }
 
         // world items
@@ -159,7 +160,7 @@
             } else if (o.type === 'ledge' && !p.grind && px2 > o.x + 4 && px1 < o.x + o.w && pbot > o.top + 8 && ptop < GROUND) {
                 bail('ate the ledge'); return;
             } else if (o.type === 'ramp' && !p.air && p.x > o.x + o.w * 0.55 && p.x < o.x + o.w) {
-                p.air = true; p.vy = RAMP_POP; S.combo++; pop('BIG AIR', '#2a6fdb');
+                p.air = true; p.vy = RAMP_POP; p.airT = 0; S.combo++; pop('BIG AIR', '#2a6fdb');
             }
         }
         if (scoreEl) scoreEl.textContent = Math.floor(S.score);
@@ -215,6 +216,18 @@
         }
     }
 
+    // ollie pitch: tail snaps, nose leads, front foot levels it, slight nose-down into landing
+    function pitch(p) {
+        if (!p.air || S.mode === 'over') return 0;
+        var t = p.airT, e;
+        if (t < 0.08) { e = t / 0.08; return -0.52 * (1 - (1 - e) * (1 - e)); }
+        if (t < 0.30) { e = (t - 0.08) / 0.22; return -0.52 * (1 - e * e * (3 - 2 * e)); }
+        if (p.vy > 0) return Math.min(0.1, p.vy / 9000);
+        return 0;
+    }
+    var TX = -22, TY = -3; // tail pivot (rear end of the deck)
+    function onBoard(x, y, a) { var dx = x - TX, dy = y - TY, c = Math.cos(a), s = Math.sin(a); return [TX + dx * c - dy * s, TY + dx * s + dy * c]; }
+
     function drawSkater() {
         var p = S.p, over = S.mode === 'over';
         ctx.save(); ctx.translate(p.x, p.y);
@@ -222,7 +235,9 @@
         if (over) { ctx.rotate(Math.min(1.4, S.t * 5)); }
         // board
         var prog = p.trick ? p.tt / TRICK_TIME : 0, kind = p.trick ? p.trick.kind : '';
-        ctx.save(); ctx.translate(0, -6 - (p.trick ? 14 * Math.sin(prog * Math.PI) : 0));
+        var pa = pitch(p);
+        ctx.save(); ctx.translate(TX, TY); ctx.rotate(pa); ctx.translate(-TX, -TY);
+        ctx.translate(0, -6 - (p.trick ? 14 * Math.sin(prog * Math.PI) : 0));
         if (kind === 'spin' || kind === 'both') ctx.scale(Math.cos(prog * Math.PI * 2), 1);
         if (kind === 'flip' || kind === 'both') ctx.scale(1, Math.max(0.15, Math.abs(Math.cos(prog * Math.PI * 2))));
         ctx.fillStyle = (kind && Math.cos(prog * Math.PI * 2) < 0) ? PINK : INK;
@@ -233,7 +248,8 @@
         ctx.strokeStyle = INK; ctx.lineWidth = 4; ctx.lineCap = 'round';
         var hip = -26 + crouch;
         var lift = p.trick ? -10 * Math.sin(prog * Math.PI) : 0;
-        ctx.beginPath(); ctx.moveTo(-10, -10 + lift); ctx.lineTo(-4, hip); ctx.lineTo(10, -10 + lift); ctx.stroke(); // legs
+        var rf = onBoard(-10, -10 + lift, pa), ff = onBoard(10, -10 + lift, pa); // feet ride the deck
+        ctx.beginPath(); ctx.moveTo(rf[0], rf[1]); ctx.lineTo(-4, hip); ctx.lineTo(ff[0], ff[1]); ctx.stroke(); // legs
         ctx.strokeStyle = SKY; ctx.lineWidth = 9; ctx.beginPath(); ctx.moveTo(-3, hip); ctx.lineTo(2, hip - 20); ctx.stroke(); // hoodie
         ctx.strokeStyle = INK; ctx.lineWidth = 3.5;
         var arm = p.air ? -14 : -4;
