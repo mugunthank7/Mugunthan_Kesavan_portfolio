@@ -2,7 +2,7 @@
    Fill in SUPABASE_URL and SUPABASE_ANON_KEY below. The anon key is meant to be public;
    row-level security in the database only allows reading and inserting valid scores. */
 (function () {
-    var SUPABASE_URL = 'SUPABASE_URL_HERE';           // e.g. https://abcd1234.supabase.co
+    var SUPABASE_URL = 'https://ajnqygkwhcahuocwkurh.supabase.co';
     var SUPABASE_ANON_KEY = 'SUPABASE_ANON_KEY_HERE'; // Project Settings → API → anon public key
     var TOP = 10, MIN_SCORE = 100;
 
@@ -12,7 +12,9 @@
     if (SUPABASE_URL.indexOf('http') !== 0 || SUPABASE_ANON_KEY.indexOf('_HERE') > -1) return; // not configured: stay hidden
 
     var API = SUPABASE_URL.replace(/\/$/, '') + '/rest/v1/scores';
-    var HEADERS = { apikey: SUPABASE_ANON_KEY, Authorization: 'Bearer ' + SUPABASE_ANON_KEY, 'Content-Type': 'application/json' };
+    var HEADERS = { apikey: SUPABASE_ANON_KEY, 'Content-Type': 'application/json' };
+    // legacy anon keys are JWTs and also go in Authorization; new sb_publishable_ keys only use the apikey header
+    if (SUPABASE_ANON_KEY.indexOf('eyJ') === 0) HEADERS.Authorization = 'Bearer ' + SUPABASE_ANON_KEY;
     var list = board.querySelector('.lb-list');
     var rows = [], lastScore = 0, mine = null;
 
