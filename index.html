@@ -31,14 +31,17 @@
         rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css?v=5">
 
     <!-- Scripts -->
-    <script src="./js/main.js" defer></script>
-    <script src="./js/game.js" defer></script>
+    <script src="./js/main.js?v=5" defer></script>
+    <script src="./js/game.js?v=5" defer></script>
+    <script src="./js/fx.js?v=5" defer></script>
 </head>
 
 <body>
+    <div class="progress" aria-hidden="true"></div><div class="blob" aria-hidden="true"></div>
+    <div class="lightbox" hidden><img alt=""><p></p></div>
     <div class="noise-overlay"></div>
 
     <nav class="navbar">
@@ -78,7 +81,8 @@
         <section id="hero" class="hero2">
             <div class="hero2-text">
                 <span class="sticker st-hi animate-in">hi, i'm</span>
-                <h1 class="hero2-name animate-in">Mugunthan<br><span class="hl">"Mugu"</span> Kesavan</h1>
+                <h1 class="hero2-name animate-in">Mugunthan<br><span class="hl burst" title="click me">"Mugu"</span> Kesavan</h1>
+                <p class="hero2-role animate-in">currently <span class="rotator" data-words="shipping LLM pipelines|building RAG systems|simulating supply chains|making demos real|falling off skateboards">shipping LLM pipelines</span><span class="caret">|</span></p>
                 <p class="hero2-tag animate-in">I build AI that does the boring work, so people don't have to. Then I ship it to production.</p>
                 <div class="hero2-chips animate-in">
                     <span class="chip c1">LLM systems</span><span class="chip c2">RAG</span><span class="chip c3">Digital twins</span><span class="chip c4">Houston, TX</span>
@@ -88,11 +92,11 @@
                     <a href="#cases" class="btn-pop alt">See my work →</a>
                 </div>
             </div>
-            <div class="hero2-photo animate-in">
+            <div class="hero2-photo tilt3d animate-in">
                 <img src="./assets/headshot.jpg" alt="Mugu smiling in a suit" width="600" height="600">
-                <span class="sticker st-ml">M.S. @ UH</span>
-                <span class="sticker st-prod">ships to prod</span>
-                <span class="sticker st-skate">🛹 skater</span>
+                <span class="sticker st-ml drag" title="drag me">M.S. @ UH</span>
+                <span class="sticker st-prod drag" title="drag me">ships to prod</span>
+                <span class="sticker st-skate drag" title="drag me">🛹 skater</span>
             </div>
         </section>
 
@@ -250,40 +254,42 @@
             <div class="section-container">
                 <div class="section-header"><h2 class="section-title">CASE STUDIES</h2><span class="section-number">03</span></div>
                 <div class="case-grid">
-                    <article class="case c-pink">
+                    <article class="case c-pink tilt3d">
                         <span class="case-kicker">TMAC · 2026</span>
+                        <img class="case-img" src="./assets/moments/tmac-results.jpg" alt="DeltaZero results dashboard, mock data" loading="lazy" data-lightbox data-cap="DeltaZero results view (mock data)">
                         <h3>DeltaZero</h3>
                         <p class="case-line">Stop bad orders before they hit the ERP.</p>
                         <dl>
                             <dt>Problem</dt><dd>Manual order entry had a client-observed ~20% error rate.</dd>
                             <dt>Build</dt><dd>Llama 3.1 8B flags errors, a 70B judge confirms, confidence tiers route the rest. Deterministic normalization runs first to cut LLM load.</dd>
-                            <dt>Result</dt><dd>97% detection accuracy on a labeled set, under 1% errors on evaluated samples, running on-prem in production.</dd>
+                            <dt>Result</dt><dd><span class="big"><span class="count" data-to="97">97</span>%</span> detection accuracy on a labeled set, under 1% errors on evaluated samples, running on-prem in production.</dd>
                         </dl>
                         <div class="case-stack"><span class="tag">LLaMA</span><span class="tag">NetSuite</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span></div>
                     </article>
-                    <article class="case c-sky">
+                    <article class="case c-sky tilt3d">
                         <span class="case-kicker">HPE × UH · 2026</span>
+                        <img class="case-img" src="./assets/moments/hpe-team.jpg" alt="Mugu with the HPE team after the ReVolve presentation" loading="lazy" data-lightbox data-cap="ReVolve handover day at HPE">
                         <h3>ReVolve</h3>
                         <p class="case-line">A reverse supply chain you can test before you touch it.</p>
                         <dl>
                             <dt>Problem</dt><dd>Hard to see bottlenecks across an 8-station returns flow.</dd>
                             <dt>Build</dt><dd>SimPy discrete-event twin, live 3D view in React and Three.js, QR unit tracking, and an on-device LLM for what-if questions.</dd>
-                            <dt>Result</dt><dd>Per-unit processing cut from 20 to 2 minutes. Presented to HPE leadership with a projected 15%+ throughput gain.</dd>
+                            <dt>Result</dt><dd><span class="big"><span class="count" data-from="20" data-to="2">2</span> min</span> per unit, down from 20. Presented to HPE leadership with a projected 15%+ throughput gain.</dd>
                         </dl>
                         <div class="case-stack"><span class="tag">SimPy</span><span class="tag">FastAPI</span><span class="tag">Three.js</span><span class="tag">Ollama</span></div>
                     </article>
-                    <article class="case c-mint">
+                    <article class="case c-mint tilt3d">
                         <span class="case-kicker">TMAC · 2026</span>
                         <h3>Client RAG Assistant</h3>
                         <p class="case-line">Ask the documents, get the page.</p>
                         <dl>
                             <dt>Problem</dt><dd>Staff were digging through technical and financial docs by hand.</dd>
-                            <dt>Build</dt><dd>Recursive chunking, vector retrieval, and a cross-encoder reranker over 3,500+ pages.</dd>
+                            <dt>Build</dt><dd>Recursive chunking, vector retrieval, and a cross-encoder reranker over <span class="big"><span class="count" data-to="3500">3,500</span>+</span> pages.</dd>
                             <dt>Result</dt><dd>Evidence-backed answers for admin staff, integrated with DeltaZero.</dd>
                         </dl>
                         <div class="case-stack"><span class="tag">RAG</span><span class="tag">Reranking</span><span class="tag">Vector search</span></div>
                     </article>
-                    <article class="case c-butter">
+                    <article class="case c-butter tilt3d">
                         <span class="case-kicker">Hackathon</span>
                         <h3>Talk to Your Plant</h3>
                         <p class="case-line">Ask a factory floor questions in plain language.</p>
@@ -571,17 +577,33 @@
             <div class="section-container">
                 <div class="section-header"><h2 class="section-title">TIMELINE</h2><span class="section-number">08</span></div>
                 <ol class="tl">
-                    <li><time>Nov 2026</time><b>AI Loves Data SF</b><span>Enterprise AI builders conference in San Francisco.</span></li>
-                    <li><time>Sep 2026</time><b>DeltaZero goes live</b><span>Live demo caught a real order error in front of the client's CEO. It led to a talk about more AI projects.</span></li>
+                    <li><img class="tl-thumb" src="./assets/moments/aws-sf.jpg" alt="" data-lightbox data-cap="AI Loves Data SF, Nov 2026" loading="lazy"><time>Nov 2026</time><b>AI Loves Data SF</b><span>Enterprise AI builders conference in San Francisco.</span></li>
+                    <li><img class="tl-thumb" src="./assets/moments/tmac-demo-room.jpg" alt="" data-lightbox data-cap="DeltaZero live demo" loading="lazy"><time>Sep 2026</time><b>DeltaZero goes live</b><span>Live demo caught a real order error in front of the client's CEO. It led to a talk about more AI projects.</span></li>
                     <li><time>Sep 2026</time><b>UH Wellness creator</b><span>Content creator, UH Wellness Influencer Program.</span></li>
                     <li><time>Jul 2026</time><b>Talk at Amrita</b><span>Spoke back at my alma mater.</span></li>
-                    <li><time>May 2026</time><b>ReVolve at HPE</b><span>Presented the digital twin to HPE leadership, then lunch with the VPs.</span></li>
+                    <li><img class="tl-thumb" src="./assets/moments/hpe-sign.jpg" alt="" data-lightbox data-cap="HPE, Houston" loading="lazy"><time>May 2026</time><b>ReVolve at HPE</b><span>Presented the digital twin to HPE leadership, then lunch with the VPs.</span></li>
                     <li><time>Apr 2026</time><b>Anthropic Academy</b><span>Completed Anthropic Academy courses.</span></li>
                 </ol>
             </div>
         </section>
 
         <hr class="section-divider">
+
+        <section id="moments" class="content-section fade-up">
+            <div class="section-container">
+                <div class="section-header"><h2 class="section-title">MOMENTS</h2><span class="section-number">09</span></div>
+                <p class="moments-hint">drag the photos around. click one to blow it up.</p>
+                <div class="board">
+                    <figure class="pol p1"><img src="./assets/moments/hpe-sign.jpg" alt="Mugu in a suit at the HPE Houston sign" loading="lazy"><figcaption>HPE, Houston</figcaption></figure>
+                    <figure class="pol p2"><img src="./assets/moments/tmac-laptops.jpg" alt="Mugu and a teammate at laptops before the DeltaZero demo" loading="lazy"><figcaption>demo prep at TMAC</figcaption></figure>
+                    <figure class="pol p3"><img src="./assets/moments/aws-sf.jpg" alt="Mugu at the AI Loves Data conference in San Francisco" loading="lazy"><figcaption>AI Loves Data SF</figcaption></figure>
+                    <figure class="pol p4"><img src="./assets/moments/hpe-team.jpg" alt="Mugu with the HPE team" loading="lazy"><figcaption>ReVolve handover crew</figcaption></figure>
+                    <figure class="pol p5"><img src="./assets/moments/tmac-demo-room.jpg" alt="DeltaZero live demo in the client meeting room" loading="lazy"><figcaption>live demo day</figcaption></figure>
+                    <figure class="pol p6"><img src="./assets/moments/tmac-dashboard.jpg" alt="DeltaZero dashboard with mock data" loading="lazy"><figcaption>DeltaZero (mock data)</figcaption></figure>
+                    <figure class="pol p7"><img src="./assets/moments/tmac-demo-room-2.jpg" alt="DeltaZero demo meeting" loading="lazy"><figcaption>"this could save us a lot"</figcaption></figure>
+                </div>
+            </div>
+        </section>
 
         <section id="beyond" class="content-section bg-secondary fade-up">
             <div class="section-container beyond-head-wrap">
