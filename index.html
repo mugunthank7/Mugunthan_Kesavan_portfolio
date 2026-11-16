@@ -35,6 +35,7 @@
 
     <!-- Scripts -->
     <script src="./js/main.js" defer></script>
+    <script src="./js/game.js" defer></script>
 </head>
 
 <body>
@@ -48,6 +49,7 @@
                 <a href="#experience" class="nav-item">Experience</a>
                 <a href="#projects" class="nav-item">Projects</a>
                 <a href="#publications" class="nav-item">Publications</a>
+                <a href="#play" class="nav-item">Play</a>
                 <a href="#contact" class="nav-item">Contact</a>
             </div>
             <button class="mobile-menu-btn" aria-label="Toggle menu">
@@ -63,6 +65,7 @@
             <a href="#experience" class="mobile-nav-item">Experience</a>
             <a href="#projects" class="mobile-nav-item">Projects</a>
             <a href="#publications" class="mobile-nav-item">Publications</a>
+            <a href="#play" class="mobile-nav-item">Play</a>
             <a href="#contact" class="mobile-nav-item">Contact</a>
         </div>
     </div>
@@ -528,6 +531,19 @@
                 </div>
 
                 <div class="beyond-bg-right beyond-image" style="background-image: url('./assets/Me_skate.jpg');" role="img" aria-label="Mugu mid-air on a skateboard"></div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="play" class="content-section fade-up">
+            <div class="section-container">
+                <h2 class="section-title">Take a Break</h2>
+                <p class="game-sub">Skate Run: hop over the bugs. Space, click or tap to jump.</p>
+                <div class="game-wrap">
+                    <canvas id="game" width="720" height="240" aria-label="Skateboard runner mini game"></canvas>
+                    <div class="game-bar"><span>Score <b id="g-score">0</b></span><span>Best <b id="g-best">0</b></span></div>
+                </div>
             </div>
         </section>
 
