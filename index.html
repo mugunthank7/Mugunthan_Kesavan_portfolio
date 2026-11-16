@@ -31,7 +31,7 @@
         rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./css/style.css?v=6">
+    <link rel="stylesheet" href="./css/style.css?v=7">
 
     <!-- Scripts -->
     <script src="./js/main.js?v=5" defer></script>
@@ -50,8 +50,7 @@
             <div class="nav-links">
                 <a href="#about" class="nav-item">About</a>
                 <a href="#experience" class="nav-item">Experience</a>
-                <a href="#cases" class="nav-item">Case Studies</a>
-                <a href="#projects" class="nav-item">Projects</a>
+                                <a href="#projects" class="nav-item">Projects</a>
                 <a href="#publications" class="nav-item">Publications</a>
                 <a href="#timeline" class="nav-item">Timeline</a>
                 <a href="#play" class="nav-item">Play</a>
@@ -68,8 +67,7 @@
         <div class="mobile-nav-links">
             <a href="#about" class="mobile-nav-item">About</a>
             <a href="#experience" class="mobile-nav-item">Experience</a>
-            <a href="#cases" class="mobile-nav-item">Case Studies</a>
-                <a href="#projects" class="mobile-nav-item">Projects</a>
+                            <a href="#projects" class="mobile-nav-item">Projects</a>
             <a href="#publications" class="mobile-nav-item">Publications</a>
             <a href="#timeline" class="mobile-nav-item">Timeline</a>
                 <a href="#play" class="mobile-nav-item">Play</a>
@@ -89,7 +87,7 @@
                 </div>
                 <div class="hero2-cta animate-in">
                     <a href="./resume/Mugunthan_Kesavan_AIML_Engineer.pdf" download="Mugunthan_Kesavan_AIML_Engineer.pdf" class="btn-pop">Download resume ↓</a>
-                    <a href="#cases" class="btn-pop alt">See my work →</a>
+                    <a href="#experience" class="btn-pop alt">See my work →</a>
                 </div>
             </div>
             <div class="hero2-photo tilt3d animate-in">
@@ -151,6 +149,8 @@
                             <h3 class="exp-role">AI Engineer &amp; Technical Research Assistant</h3>
                             <h4 class="exp-team">AI Systems &amp; Automation</h4>
                             <p class="exp-company">TMAC × University of Houston</p>
+                            <div class="exp-photos"><img src="./assets/moments/tmac-laptops.jpg" alt="Demo prep at TMAC" data-lightbox data-cap="Demo prep at TMAC" loading="lazy"><img src="./assets/moments/tmac-demo-room.jpg" alt="DeltaZero live demo" data-lightbox data-cap="DeltaZero live demo" loading="lazy"><img src="./assets/moments/tmac-results.jpg" alt="DeltaZero results view (mock data)" data-lightbox data-cap="DeltaZero results view (mock data)" loading="lazy"></div>
+                            
                             <ul class="exp-bullets">
                                 <li>Targeted roughly $100K/year in client logistics losses from manual ERP order-entry errors, cutting the error rate from ~20% to under 1% on evaluated samples</li>
                                 <li>Architected DeltaZero, a two-stage LLM pipeline (Claude Sonnet judge, confidence-tiered routing) validating orders against NetSuite; benchmarking judges raised precision from 71% to 100% at 87% recall</li>
@@ -188,6 +188,8 @@
                             <h3 class="exp-role">Research Assistant</h3>
                             <h4 class="exp-team">Digital Twin &amp; Optimization</h4>
                             <p class="exp-company">HPE × University of Houston</p>
+                            <div class="exp-photos"><img src="./assets/moments/hpe-sign.jpg" alt="HPE, Houston" data-lightbox data-cap="HPE, Houston" loading="lazy"><img src="./assets/moments/hpe-team.jpg" alt="ReVolve handover day at HPE" data-lightbox data-cap="ReVolve handover day at HPE" loading="lazy"></div>
+                            
                             <ul class="exp-bullets">
                                 <li>Led development of an 8-station reverse-supply-chain digital twin using discrete-event
                                     simulation (SimPy) for bottleneck detection via dwell-time analysis and what-if
@@ -247,66 +249,11 @@
 
         <hr class="section-divider">
 
-        <section id="cases" class="content-section fade-up">
-            <div class="section-container">
-                <div class="section-header"><h2 class="section-title">CASE STUDIES</h2><span class="section-number">03</span></div>
-                <div class="case-grid">
-                    <article class="case c-pink tilt3d">
-                        <span class="case-kicker">TMAC · 2026</span>
-                        <img class="case-img" src="./assets/moments/tmac-results.jpg" alt="DeltaZero results dashboard, mock data" loading="lazy" data-lightbox data-cap="DeltaZero results view (mock data)">
-                        <h3>DeltaZero</h3>
-                        <p class="case-line">Stop bad orders before they hit the ERP.</p>
-                        <dl>
-                            <dt>Problem</dt><dd>Manual order entry had a client-observed ~20% error rate, costing roughly $100K a year in logistics losses.</dd>
-                            <dt>Build</dt><dd>Two-stage LLM pipeline with a Claude Sonnet judge and confidence-tiered routing, validating orders against NetSuite. Benchmarking judges raised precision from 71% to 100% at 87% recall.</dd>
-                            <dt>Result</dt><dd>Errors from ~20% to <span class="big">&lt;<span class="count" data-from="20" data-to="1">1</span>%</span> on evaluated samples, running on the client's own servers.</dd>
-                        </dl>
-                        <div class="case-stack"><span class="tag">Claude Sonnet</span><span class="tag">NetSuite</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span></div>
-                    </article>
-                    <article class="case c-sky tilt3d">
-                        <span class="case-kicker">HPE × UH · 2026</span>
-                        <img class="case-img" src="./assets/moments/hpe-team.jpg" alt="Mugu with the HPE team after the ReVolve presentation" loading="lazy" data-lightbox data-cap="ReVolve handover day at HPE">
-                        <h3>ReVolve</h3>
-                        <p class="case-line">A reverse supply chain you can test before you touch it.</p>
-                        <dl>
-                            <dt>Problem</dt><dd>Hard to see bottlenecks across an 8-station returns flow.</dd>
-                            <dt>Build</dt><dd>SimPy discrete-event twin, live 3D view in React and Three.js, QR unit tracking, and an on-device LLM for what-if questions.</dd>
-                            <dt>Result</dt><dd><span class="big"><span class="count" data-from="20" data-to="2">2</span> min</span> per unit, down from 20. Presented to HPE leadership with a projected 15%+ throughput gain.</dd>
-                        </dl>
-                        <div class="case-stack"><span class="tag">SimPy</span><span class="tag">FastAPI</span><span class="tag">Three.js</span><span class="tag">Ollama</span></div>
-                    </article>
-                    <article class="case c-mint tilt3d">
-                        <span class="case-kicker">TMAC · 2026</span>
-                        <h3>Client RAG Assistant</h3>
-                        <p class="case-line">Ask the documents, get the page.</p>
-                        <dl>
-                            <dt>Problem</dt><dd>Staff were digging through technical and financial docs by hand.</dd>
-                            <dt>Build</dt><dd>Recursive chunking, vector retrieval, and a cross-encoder reranker over <span class="big"><span class="count" data-to="3500">3,500</span>+</span> pages.</dd>
-                            <dt>Result</dt><dd>Evidence-backed answers for admin staff, integrated with DeltaZero.</dd>
-                        </dl>
-                        <div class="case-stack"><span class="tag">RAG</span><span class="tag">Reranking</span><span class="tag">Vector search</span></div>
-                    </article>
-                    <article class="case c-butter tilt3d">
-                        <span class="case-kicker">Hackathon</span>
-                        <h3>Talk to Your Plant</h3>
-                        <p class="case-line">Ask a factory floor questions in plain language.</p>
-                        <dl>
-                            <dt>Idea</dt><dd>A multimodal plus GraphRAG twin of an automotive assembly plant.</dd>
-                            <dt>Me</dt><dd>Wrote all the code for our team's entry. We didn't win, and I'm still building on it.</dd>
-                        </dl>
-                        <div class="case-stack"><span class="tag">Multimodal</span><span class="tag">GraphRAG</span></div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <hr class="section-divider">
-
         <section id="projects" class="content-section fade-up">
             <div class="section-container">
                 <div class="section-header">
                     <h2 class="section-title">PROJECTS</h2>
-                    <span class="section-number">04</span>
+                    <span class="section-number">03</span>
                 </div>
 
                 <div class="projects-grid">
@@ -338,6 +285,20 @@
                             </div>
                         </div>
                         <div class="project-link">Client project</div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3 class="project-title">Talk to Your Plant</h3>
+                            <p class="project-desc">Hackathon build: a live 3D digital twin of an EV assembly plant driven by a SimPy engine, with an LLM copilot using GraphRAG to diagnose injected faults, run what-if scenarios, and dispatch work orders.</p>
+                            <div class="tech-tags">
+                                <span class="tag">SimPy</span>
+                                <span class="tag">GraphRAG</span>
+                                <span class="tag">Knowledge graph</span>
+                                <span class="tag">3D</span>
+                            </div>
+                        </div>
+                        <div class="project-link">Hackathon</div>
                     </div>
 
                     <a href="https://github.com/mugunthank7/FeedForward-Ai-news" target="_blank" class="project-card">
@@ -443,7 +404,7 @@
             <div class="section-container">
                 <div class="section-header">
                     <h2 class="section-title">PUBLICATIONS</h2>
-                    <span class="section-number">05</span>
+                    <span class="section-number">04</span>
                 </div>
 
                 <div class="publications-list">
@@ -484,7 +445,7 @@
             <div class="section-container">
                 <div class="section-header">
                     <h2 class="section-title">EDUCATION</h2>
-                    <span class="section-number">06</span>
+                    <span class="section-number">05</span>
                 </div>
 
                 <div class="education-grid">
@@ -518,7 +479,7 @@
             <div class="section-container">
                 <div class="section-header">
                     <h2 class="section-title">SKILLS</h2>
-                    <span class="section-number">07</span>
+                    <span class="section-number">06</span>
                 </div>
 
                 <div class="skills-list">
@@ -571,7 +532,7 @@
 
         <section id="timeline" class="content-section fade-up">
             <div class="section-container">
-                <div class="section-header"><h2 class="section-title">TIMELINE</h2><span class="section-number">08</span></div>
+                <div class="section-header"><h2 class="section-title">TIMELINE</h2><span class="section-number">07</span></div>
                 <ol class="tl">
                     <li><img class="tl-thumb" src="./assets/moments/aws-sf.jpg" alt="" data-lightbox data-cap="AI Loves Data SF, Nov 2026" loading="lazy"><time>Nov 2026</time><b>AI Loves Data SF</b><span>Enterprise AI builders conference in San Francisco.</span></li>
                     <li><img class="tl-thumb" src="./assets/moments/tmac-demo-room.jpg" alt="" data-lightbox data-cap="DeltaZero live demo" loading="lazy"><time>Sep 2026</time><b>DeltaZero goes live</b><span>Live demo caught a real order error in front of the client's CEO. It led to a talk about more AI projects.</span></li>
@@ -587,7 +548,7 @@
 
         <section id="moments" class="content-section fade-up">
             <div class="section-container">
-                <div class="section-header"><h2 class="section-title">MOMENTS</h2><span class="section-number">09</span></div>
+                <div class="section-header"><h2 class="section-title">MOMENTS</h2><span class="section-number">08</span></div>
                 <p class="moments-hint">drag the photos around. click one to blow it up.</p>
                 <div class="board">
                     <figure class="pol p1"><img src="./assets/moments/hpe-sign.jpg" alt="Mugu in a suit at the HPE Houston sign" loading="lazy"><figcaption>HPE, Houston</figcaption></figure>

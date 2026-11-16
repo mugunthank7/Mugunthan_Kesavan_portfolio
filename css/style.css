@@ -1463,3 +1463,8 @@ section.content-section { padding-top: 2.5rem; padding-bottom: 3.5rem; }
 .sowhat { background: var(--pop-butter); border: 2px solid var(--ink); border-radius: 14px; padding: .8rem 1rem; box-shadow: var(--hard-sm); transform: rotate(-.5deg); }
 .sowhat b { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; }
 .about-text p.about-lead { font: 800 clamp(1.8rem, 3.8vw, 2.6rem)/1.08 "Bricolage Grotesque", sans-serif; color: var(--accent); margin-bottom: 1rem; }
+.exp-photos { display: flex; gap: .8rem; margin: .9rem 0 1.1rem; flex-wrap: wrap; }
+.exp-photos img { width: 168px; height: 126px; object-fit: cover; border: 2px solid var(--ink); border-radius: 10px; box-shadow: var(--hard-sm); cursor: zoom-in; transition: transform .15s; background: #fff; }
+.exp-photos img:nth-child(odd) { transform: rotate(-3deg); } .exp-photos img:nth-child(even) { transform: rotate(3deg); }
+.exp-photos img:hover { transform: rotate(0) scale(1.08); z-index: 2; position: relative; }
+@media (max-width: 800px) { .exp-photos img { width: calc(33% - .6rem); height: 80px; } }
