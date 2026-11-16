@@ -3,7 +3,7 @@
    row-level security in the database only allows reading and inserting valid scores. */
 (function () {
     var SUPABASE_URL = 'https://ajnqygkwhcahuocwkurh.supabase.co';
-    var SUPABASE_ANON_KEY = 'SUPABASE_ANON_KEY_HERE'; // Project Settings → API → anon public key
+    var SUPABASE_ANON_KEY = 'sb_publishable_E9VZG-aGkZPNzbWTddNJSQ_HpL76M-Y';
     var TOP = 10, MIN_SCORE = 100;
 
     var board = document.querySelector('.leaderboard');
