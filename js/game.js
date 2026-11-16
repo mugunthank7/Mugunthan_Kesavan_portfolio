@@ -38,9 +38,10 @@
 
     function pop(text, color) { S.pops.push({ text: text, x: S.p.x, y: S.p.y - 80, t: 0, color: color || INK }); }
 
+    function track(path, title) { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: path, title: title, event: true }); }
     function act() {
-        if (S.mode === 'idle') { S.mode = 'run'; return; }
-        if (S.mode === 'over') { if (S.t > 0.6) { reset(); S.mode = 'run'; } return; }
+        if (S.mode === 'idle') { S.mode = 'run'; track('game-start', 'Skate Run: started'); return; }
+        if (S.mode === 'over') { if (S.t > 0.6) { reset(); S.mode = 'run'; track('game-retry', 'Skate Run: retry'); } return; }
         var p = S.p;
         if (!p.air) { // ollie (from ground or off a grind)
             p.vy = OLLIE; p.air = true; p.airT = 0;

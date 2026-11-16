@@ -123,6 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     foot.appendChild(el('span', 'li-stats', stats.join(' · ')));
                     const a = el('a', 'li-link', 'Read post →');
                     a.href = p.url; a.target = '_blank'; a.rel = 'noopener';
+                    a.addEventListener('click', function () { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: 'linkedin-post-' + p.id, title: 'LinkedIn post: ' + (p.headline || '').slice(0, 60), event: true }); });
                     foot.appendChild(a);
                     card.appendChild(foot);
                     list.appendChild(card);
